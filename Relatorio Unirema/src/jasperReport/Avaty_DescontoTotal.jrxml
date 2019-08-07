@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Avaty_DisponibilidadeLink" pageWidth="1580" pageHeight="700" orientation="Landscape" columnWidth="1540" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a5c9b49-9dc5-422a-ac69-e92cf61ef530">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="TabelaDescritivo" uuid="dd322783-b6f8-45e2-88bf-a0531083efae">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band height="579" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<image>
+				<reportElement x="2" y="0" width="1537" height="579" uuid="9f629bb4-ce1a-4b53-aa10-a23569a56d35"/>
+				<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/Disponibilidade/Background_Avaty.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<columnHeader>
+		<band height="155" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="60" width="1540" height="59" forecolor="#000000" backcolor="#F24F4F" uuid="f1bb038f-71f9-4488-8ea8-e08940001e1b"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Solid" lineColor="#CDCDCD"/>
+				</box>
+				<staticText>
+					<reportElement x="430" y="16" width="759" height="31" forecolor="#FCF5F5" uuid="17400567-e28b-4b4c-ba9e-2418be75f2c6"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="Century Gothic" size="22" isBold="true"/>
+					</textElement>
+					<text><![CDATA[PROJETO UNIREMA - JULHO 2019 - DESCONTO TOTAL]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement mode="Opaque" x="230" y="120" width="220" height="30" forecolor="#FFFFFF" backcolor="#F24F4F" uuid="38210ecf-4868-4483-ac37-7fd4110fb9d2"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Solid" lineColor="#CDCDCD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Century Gothic" size="14" isBold="true"/>
+					<paragraph firstLineIndent="0" leftIndent="2" rightIndent="2" spacingBefore="0" spacingAfter="0"/>
+				</textElement>
+				<text><![CDATA[DISPONIBILIDADE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="450" y="120" width="200" height="30" forecolor="#FFFFFF" backcolor="#F24F4F" uuid="65c4f79d-df1f-47fa-8384-7e253e41682c"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.75" lineColor="#CDCDCD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="14" isBold="true"/>
+					<paragraph firstLineIndent="0" leftIndent="2" rightIndent="2" spacingBefore="0" spacingAfter="0"/>
+				</textElement>
+				<text><![CDATA[LATÊNCIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1239" y="120" width="300" height="30" forecolor="#FFFFFF" backcolor="#F24F4F" uuid="037d3bcf-f4a2-4919-896c-d401c7da68ea"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.75" lineColor="#CDCDCD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="14" isBold="true"/>
+					<paragraph firstLineIndent="0" leftIndent="2" rightIndent="2" spacingBefore="0" spacingAfter="0"/>
+				</textElement>
+				<text><![CDATA[TEMPO DE ATIVAÇÃO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="650" y="120" width="319" height="30" forecolor="#FFFFFF" backcolor="#F24F4F" uuid="0e8c140d-56dd-4257-911f-c6c838032bd1"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.75" lineColor="#CDCDCD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="14" isBold="true"/>
+					<paragraph firstLineIndent="0" leftIndent="2" rightIndent="2" spacingBefore="0" spacingAfter="0"/>
+				</textElement>
+				<text><![CDATA[ERROS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="1450" y="0" width="70" height="60" uuid="a5b55412-c2eb-4fe5-a31a-fafb8d669ee4"/>
+				<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/Disponibilidade/Slogan_Avaty_Marca.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="969" y="120" width="270" height="30" forecolor="#FFFFFF" backcolor="#F24F4F" uuid="6a50ae76-a07b-40c6-838d-782526a9a80b"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.75" lineColor="#CDCDCD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="14" isBold="true"/>
+					<paragraph firstLineIndent="0" leftIndent="2" rightIndent="2" spacingBefore="0" spacingAfter="0"/>
+				</textElement>
+				<text><![CDATA[JITTER ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="120" width="230" height="30" forecolor="#FFFFFF" backcolor="#F24F4F" uuid="103423d8-7d77-4bab-857a-17736570f186"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Solid" lineColor="#CDCDCD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Century Gothic" size="14" isBold="true"/>
+					<paragraph firstLineIndent="0" leftIndent="2" rightIndent="2" spacingBefore="0" spacingAfter="0"/>
+				</textElement>
+				<text><![CDATA[TEMPO DE REPARO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="-5" width="200" height="24" uuid="af2d199a-1add-45de-af8d-4601ae7a4235"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Solid" lineColor="#CDCDCD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="13" isBold="false"/>
+					<paragraph lineSpacingSize="1.0" firstLineIndent="0" leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R$ 2.582,98"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="969" y="-5" width="270" height="24" uuid="b417e4d2-c5bc-4ffa-8310-b1db5f200c56"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Solid" lineColor="#CDCDCD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="13" isBold="false"/>
+					<paragraph lineSpacingSize="1.0" firstLineIndent="0" leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R$ 0,00"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="650" y="-5" width="319" height="24" uuid="76ca40d6-2664-49a8-a211-5d98ef9cd77c"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Solid" lineColor="#CDCDCD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="13" isBold="false"/>
+					<paragraph lineSpacingSize="1.0" firstLineIndent="0" leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R$ 0,00"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1239" y="-5" width="300" height="24" uuid="37506402-454a-4e49-96e1-b13466bc2666"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.75" lineStyle="Solid" lineColor="#CDCDCD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="13" isBold="false"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" firstLineIndent="0" leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R$ 589,03"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="-5" width="220" height="24" uuid="5c29a712-1ec2-4bee-b4c8-03c078f38f0e"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Solid" lineColor="#CDCDCD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="13" isBold="false"/>
+					<paragraph lineSpacingSize="1.0" firstLineIndent="0" leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R$ 1.478,15"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="969" y="35" width="270" height="20" backcolor="#FFEA00" uuid="1cec104e-7a05-4e45-a420-59f9a5b983e7"/>
+				<box>
+					<pen lineWidth="0.75" lineColor="#CDCDCD"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="13" isBold="false"/>
+					<paragraph firstLineIndent="0" leftIndent="2" rightIndent="2" spacingBefore="0" spacingAfter="0"/>
+				</textElement>
+				<text><![CDATA[DESCONTO TOTAL:]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" mode="Opaque" x="1239" y="35" width="298" height="20" backcolor="#FFEA00" uuid="d57b1a9b-8419-4b5e-b5d1-8ae107ca32d1"/>
+				<box>
+					<pen lineWidth="0.75" lineColor="#CDCDCD"/>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="13" isBold="false"/>
+					<paragraph leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R$ 10.694,33"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="-5" width="230" height="24" uuid="66947dc5-f60b-4def-9a7e-fcd8d8d05e91"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Solid" lineColor="#CDCDCD"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Century Gothic" size="13" isBold="false"/>
+					<paragraph lineSpacingSize="1.0" firstLineIndent="0" leftIndent="2" rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["R$ 6.044,17"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="130" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="1540" height="25" forecolor="#D0B48E" backcolor="#F24F4F" uuid="1002116b-7ebe-4de1-aca6-8e2cf8729936"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="e8f31d5b-8b54-443a-a32a-71bbe1ddb1b5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="11" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement x="561" y="10" width="420" height="85" uuid="4aadbfb5-ca7d-41c5-ae2f-f41f92df852e"/>
+				<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/Disponibilidade/ISO_Cor_Forte.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="555">
+			<frame>
+				<reportElement x="0" y="122" width="1079" height="269" uuid="e527be50-9b7c-42e8-b55e-d4d628797e69"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement mode="Opaque" x="380" y="8" width="601" height="41" forecolor="#FFFFFF" backcolor="#F24F4F" uuid="ff47a413-acd7-4e38-8528-402db1f6a979"/>
+					<box>
+						<pen lineColor="#CDCDCD"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+					</box>
+					<textElement markup="none">
+						<font fontName="Century Gothic" size="18" isBold="true"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<text><![CDATA[Descritivo dos Erros]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="2" y="89" width="258" height="138" uuid="fdfc5f23-44db-4222-9d0c-936e7ed4bb44"/>
+					<box>
+						<pen lineColor="#CDCDCD"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="11"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Realizar a Descrição Aqui"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="260" y="89" width="280" height="29" uuid="2e906b53-ae00-433f-9852-8345df1328cb"/>
+					<box>
+						<pen lineColor="#CDCDCD"/>
+						<topPen lineWidth="1.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="11"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA["DESCREVER O CÁLCULO AQUI"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="2" y="49" width="260" height="40" forecolor="#FFFFFF" backcolor="#F24F4F" uuid="52eab13e-cc56-407e-97bd-39e582c91a2d"/>
+					<box>
+						<pen lineColor="#CDCDCD"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="14" isBold="true"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<text><![CDATA[Descrição]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="260" y="49" width="280" height="40" forecolor="#FFFFFF" backcolor="#F24F4F" uuid="cd26178d-4d30-4dd5-a7ce-5f96e7fb4b76"/>
+					<box>
+						<pen lineColor="#CDCDCD"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="14" isBold="true"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<text><![CDATA[Cálculo]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="260" y="118" width="280" height="28" uuid="efe6ea16-ded8-4818-bba2-f04fb9cd26fd"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="11"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="260" y="146" width="280" height="28" uuid="e65470c7-20eb-4f0f-b0dc-ea1ef8292fde"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="11"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="260" y="174" width="280" height="28" uuid="db22185a-3f6d-46bc-890a-9f95ea0457c6"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="11"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="260" y="202" width="280" height="25" uuid="ca679eb0-a822-4be8-9773-6e43defa567e"/>
+					<box>
+						<bottomPen lineWidth="1.0" lineColor="#CDCDCD"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="11"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="540" y="49" width="253" height="40" forecolor="#FFFFFF" backcolor="#F24F4F" uuid="0f171b54-9715-4160-b15d-a194509b3cb3"/>
+					<box>
+						<pen lineColor="#CDCDCD"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="14" isBold="true"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<text><![CDATA[Meta]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="540" y="89" width="253" height="138" uuid="6561290e-7dc0-4d42-a7f2-c6244ac6ab9a"/>
+					<box>
+						<pen lineColor="#CDCDCD"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="11"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA["INFORMAR EM PORCENTAGEM - EX: 100%"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="793" y="194" width="284" height="33" uuid="99273496-a30f-4ea0-8565-a7d48f8b9228"/>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="11"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PENALIDADE 4"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="793" y="162" width="284" height="32" uuid="a538a94e-f612-4368-9fd3-28a99fa9fa41"/>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="11"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PENALIDADE 3"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="793" y="129" width="284" height="32" uuid="1dff2e6b-5050-4746-959b-c0c7bc108a16"/>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="11"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PENALIDADE 2"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="793" y="89" width="284" height="40" uuid="46bda4ea-9b23-4bb4-8c9e-96a5ce8aefe0"/>
+					<box>
+						<pen lineColor="#CDCDCD"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="11"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PENALIDADE 1"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement mode="Opaque" x="793" y="49" width="284" height="40" forecolor="#FFFFFF" backcolor="#F24F4F" uuid="5a3a710c-a66f-457a-891e-d8fbaac2678a"/>
+					<box>
+						<pen lineColor="#CDCDCD"/>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Century Gothic" size="14" isBold="true"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<text><![CDATA[Penalidade]]></text>
+				</staticText>
+			</frame>
+			<image>
+				<reportElement x="1450" y="0" width="57" height="54" uuid="0142722a-477a-4e5a-b2d7-72c0b3d6ff46"/>
+				<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/Slogan_Avaty_Marca.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="561" y="440" width="420" height="85" uuid="7ce3500d-61a6-47cd-a58f-45602cac4a4a"/>
+				<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/Disponibilidade/ISO_Cor_Forte.png"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="54" width="1540" height="59" forecolor="#000000" backcolor="#F24F4F" uuid="3feadb67-5d90-461d-8355-c64e9026d1b1"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#CDCDCD"/>
+				</box>
+				<staticText>
+					<reportElement x="280" y="16" width="599" height="31" forecolor="#FCF5F5" uuid="878c0c85-f7ca-47ca-a886-c5c2a868e685"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="Century Gothic" size="22" isBold="true"/>
+					</textElement>
+					<text><![CDATA[PROJETO UNIREMA - FEVEREIRO 2019 - ERROS]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

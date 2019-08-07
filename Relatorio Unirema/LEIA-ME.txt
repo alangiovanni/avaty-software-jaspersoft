@@ -1,0 +1,6 @@
+Eclipse IDE for Java Developers
+
+Version: Photon Release (4.8.0)
+Build id: 20180619-1200
+
+Necessário instalar as dependências: Jaspersoft Studio, XStream.
