@@ -28,7 +28,7 @@ public class ColDisponibilidade {
 		
 	}
 	
-	//Métodos
+	//Mï¿½todos
 	
 	public ArrayList<DisponibilidadeLink> retornaLista(){
 		return colDisponibilidade;
@@ -46,20 +46,20 @@ public class ColDisponibilidade {
 		colDisponibilidade.add(novaDisponibilidade);
 	}
 	
-	public void começarDoZero() {
-		System.out.println("LATÊNCIA");
-		System.out.println("Tamanho ANTES da execução do Protocolo: "+ colDisponibilidade.size());
+	public void comeÃ§arDoZero() {
+		System.out.println("LATÃŠNCIA");
+		System.out.println("Tamanho ANTES da execuÃ§Ã£o do Protocolo: "+ colDisponibilidade.size());
 		this.mesReferencia = "";
 		this.anoReferencia ="";
 		colDisponibilidade.removeAll(colDisponibilidade);
-		System.out.println("Tamanho APÓS execução do protocolo: " + colDisponibilidade.size());
+		System.out.println("Tamanho APÃ“S execuÃ§Ã£o do protocolo: " + colDisponibilidade.size());
 	}
 	
 	public int retornaTamanhoDaLista() {
 		return colDisponibilidade.size();
 	}
 	public void pegaDisponibilidadeDaPlanilha(File planilha, ColCircuitos circuitos) {
-		// Variavel para salvar os circuitos não encontrados na coleçao do software
+		// Variavel para salvar os circuitos nï¿½o encontrados na coleï¿½ao do software
 		String circuitos_nao_encontrados = null;
 
 		try {
@@ -82,7 +82,7 @@ public class ColDisponibilidade {
 					// Recebe todas as celulas da linha
 					Iterator<Cell> cellIterator = row.iterator();
 
-					// Inicializando as variáveis antes de realizar a busca na linha
+					// Inicializando as variï¿½veis antes de realizar a busca na linha
 					int contador = 0;
 					String nome_circuito = null;
 					int totalColetas = 0;
@@ -111,9 +111,9 @@ public class ColDisponibilidade {
 						contador++;
 					}
 
-					// Faz uma varredura e verifica se já encontra-se cadastrado o circuito
+					// Faz uma varredura e verifica se jï¿½ encontra-se cadastrado o circuito
 					// Se sim, atualiza
-					// Se não encontrar, notifica para o usuario
+					// Se nï¿½o encontrar, notifica para o usuario
 					boolean circuito_encontrado = false;
 					
 					for (Circuito circuito : circuitos.retornaLista()) {
@@ -137,7 +137,7 @@ public class ColDisponibilidade {
 							novaDisponibilidade.setTotalColetas(totalColetas);
 							
 							//DEFINIR O VALOR A PAGAR DO CIRCUITO AQUI BASEADO NA DISPONIBILIDADE
-							// Iniciando a variável para tratar nos IF's Abaixo
+							// Iniciando a variï¿½vel para tratar nos IF's Abaixo
 							double valorDescontado;
 							double valorDesconto;
 							
@@ -181,7 +181,7 @@ public class ColDisponibilidade {
 							colDisponibilidade.add(novaDisponibilidade);
 						}
 					}
-					// Circuitos não encontrados na coleção
+					// Circuitos nï¿½o encontrados na coleï¿½ï¿½o
 					if (circuito_encontrado == false) {
 						if (circuitos_nao_encontrados == null) {
 							circuitos_nao_encontrados = nome_circuito;
@@ -202,7 +202,7 @@ public class ColDisponibilidade {
 			JOptionPane.showMessageDialog(null, "Todos os circuitos foram localizados.");
 		} else {
 			JOptionPane.showMessageDialog(null,
-					"ERRO: Circuitos não encontrados na Base de Dados: " + circuitos_nao_encontrados);
+					"ERRO: Circuitos nÃ£o encontrados na Base de Dados: " + circuitos_nao_encontrados);
 		}
 	}
 	

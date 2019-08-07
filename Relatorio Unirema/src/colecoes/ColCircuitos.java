@@ -25,7 +25,7 @@ public class ColCircuitos {
 		
 	}
 	
-	//Métodos
+	//Mï¿½todos
 	/**
 	 * Mock Factory of entity circuit
 	**/
@@ -45,12 +45,12 @@ public class ColCircuitos {
 		return colCircuitos.size();
 	}
 	
-	//NÃO USADO
-	public void começarDoZero() {
-		System.out.println("LATÊNCIA");
-		System.out.println("Tamanho ANTES da execução do Protocolo: "+ colCircuitos.size());
+	//Nï¿½O USADO
+	public void comeÃ§arDoZero() {
+		System.out.println("LATÃŠNCIA");
+		System.out.println("Tamanho ANTES da execuÃ§Ã£o do Protocolo: "+ colCircuitos.size());
 		colCircuitos.removeAll(colCircuitos);		
-		System.out.println("Tamanho APÓS execução do protocolo: " + colCircuitos.size());
+		System.out.println("Tamanho APÃ“S execuÃ§Ã£o do protocolo: " + colCircuitos.size());
 	}
 	
 	public Circuito retornaCircuito(String circuito){
@@ -63,7 +63,7 @@ public class ColCircuitos {
 	}
 	
 	public void pegarLatenciaDaPlanilha(File planilha) {
-		//Variavel para salvar os circuitos não encontrados na coleçao do software
+		//Variavel para salvar os circuitos nï¿½o encontrados na coleï¿½ao do software
 		String circuitos_nao_encontrados = null;
 		
 		try {
@@ -86,7 +86,7 @@ public class ColCircuitos {
 					//Recebe todas as celulas da linha
 					Iterator<Cell> cellIterator = row.iterator();
 					
-					//Inicializando as variáveis antes de realizar a busca na linha
+					//Inicializando as variï¿½veis antes de realizar a busca na linha
 					int contador = 0;
 					int latencia = 0;
 					String nome_circuito = null;
@@ -110,13 +110,13 @@ public class ColCircuitos {
 						contador ++;
 					}
 					
-					//Faz uma varredura e verifica se já encontra-se cadastrado o circuito
+					//Faz uma varredura e verifica se jï¿½ encontra-se cadastrado o circuito
 					//Se sim, atualiza
-					//Se não encontrar, notifica para o usuario
+					//Se nï¿½o encontrar, notifica para o usuario
 					
 					for(Circuito circuito: colCircuitos){
 						if(circuito.getCircuito().equalsIgnoreCase(nome_circuito)) {
-							//Circuito já existe na coleção, atualizando-o.
+							//Circuito jï¿½ existe na coleï¿½ï¿½o, atualizando-o.
 							circuito.setLatencia(latencia);
 							//Informo aqui que encontrei o circuito na planilha.
 							circuito_encontrado=true;
@@ -127,7 +127,7 @@ public class ColCircuitos {
 							}
 						}
 					}
-					// Circuitos não encontrados na coleção
+					// Circuitos nï¿½o encontrados na coleï¿½ï¿½o
 					if(circuito_encontrado == false) {
 						if(circuitos_nao_encontrados == null) {
 							circuitos_nao_encontrados = nome_circuito;
@@ -148,7 +148,7 @@ public class ColCircuitos {
 			JOptionPane.showMessageDialog(null, "Todos os circuitos foram localizados.");
 		}
 		else {
-			JOptionPane.showMessageDialog(null, "ERRO: Circuitos não encontrados no SOFTWARE: " + circuitos_nao_encontrados);
+			JOptionPane.showMessageDialog(null, "ERRO: Circuitos nÃ£o encontrados no SOFTWARE: " + circuitos_nao_encontrados);
 		}
 			
 	}
@@ -187,7 +187,7 @@ public class ColCircuitos {
 							try	{
 								novoCircuito.setCircuito(cell.getStringCellValue());	
 							} catch (Exception e) {
-								JOptionPane.showMessageDialog(null, "Erro ao coletar o CIRCUITO. Está na Primeira coluna (A)? Esta formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Erro ao coletar o CIRCUITO. EstÃ¡ na Primeira coluna (A)? EstÃ¡ formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
 								e.printStackTrace();
 								return;
 							}
@@ -196,7 +196,7 @@ public class ColCircuitos {
 							try {
 								novoCircuito.setLocalizacao(cell.getStringCellValue());
 							} catch (Exception e) {
-								JOptionPane.showMessageDialog(null, "Erro ao coletar a LOCALIZAÇÃO. Está na Segunda coluna (B)? Esta formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Erro ao coletar a LOCALIZAÃ‡ÃƒO. EstÃ¡ na Segunda coluna (B)? EstÃ¡ formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
 								e.printStackTrace();
 								return;
 							}
@@ -205,7 +205,7 @@ public class ColCircuitos {
 							try {
 								novoCircuito.setTecnologia(cell.getStringCellValue());
 							} catch (Exception e) {
-								JOptionPane.showMessageDialog(null, "Erro ao coletar a TECNOLOGIA. Está na Terceira coluna (C)? Esta formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Erro ao coletar a TECNOLOGIA. Estï¿½ na Terceira coluna (C)? EstÃ¡ formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
 								e.printStackTrace();
 								return;
 							}
@@ -214,7 +214,7 @@ public class ColCircuitos {
 							try {
 								novoCircuito.setGrupo(cell.getStringCellValue());
 							} catch (Exception e) {
-								JOptionPane.showMessageDialog(null, "Erro ao coletar o GRUPO. Está na Quarta coluna (D)? Esta formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Erro ao coletar o GRUPO. Estï¿½ na Quarta coluna (D)? EstÃ¡ formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
 								e.printStackTrace();
 								return;
 							}
@@ -223,7 +223,7 @@ public class ColCircuitos {
 							try {
 								novoCircuito.setLocal(cell.getStringCellValue());
 							} catch (Exception e) {
-								JOptionPane.showMessageDialog(null, "Erro ao coletar o LOCAL. Está na Quinta coluna (E)? Esta formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Erro ao coletar o LOCAL. Estï¿½ na Quinta coluna (E)? EstÃ¡ formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
 								e.printStackTrace();
 								return;
 							}
@@ -232,7 +232,7 @@ public class ColCircuitos {
 							try {
 								novoCircuito.setBandaContratada(cell.getStringCellValue());
 							} catch (Exception e) {
-								JOptionPane.showMessageDialog(null, "Erro ao coletar a VELOCIDADE DO LINK. Está na Sexta coluna (F)? Esta formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Erro ao coletar a VELOCIDADE DO LINK. EstÃ¡ na Sexta coluna (F)? EstÃ¡ formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
 								e.printStackTrace();
 								return;
 							}
@@ -241,7 +241,7 @@ public class ColCircuitos {
 							try {
 								novoCircuito.setValor(cell.getNumericCellValue());
 							} catch (Exception e) {
-								JOptionPane.showMessageDialog(null, "Erro ao coletar o VALOR DO LINK. Está na Sétima coluna (G)? Esta formatado para NÚMERO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Erro ao coletar o VALOR DO LINK. EstÃ¡ na SÃ©tima coluna (G)? Esta formatado para NÃšMERO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
 								e.printStackTrace();
 								return;
 							}
@@ -250,13 +250,13 @@ public class ColCircuitos {
 						contador ++;
 					}
 					
-					//Faz uma varredura e verifica se já encontra-se cadastrado o circuito
+					//Faz uma varredura e verifica se jï¿½ encontra-se cadastrado o circuito
 					//Se sim, atualiza
-					//Se não encontrar, adiciona novo.
+					//Se nï¿½o encontrar, adiciona novo.
 					boolean circuito_encontrado=false;
 					for(Circuito circuito: colCircuitos){
 						if(circuito.getCircuito().equals(novoCircuito.getCircuito())) {
-							//Circuito já existe na coleção, atualizando-o.
+							//Circuito jï¿½ existe na coleï¿½ï¿½o, atualizando-o.
 							circuito.setLocalizacao(novoCircuito.getLocalizacao());
 							circuito.setBandaContratada(novoCircuito.getBandaContratada());
 							circuito.setGrupo(novoCircuito.getGrupo());
@@ -282,10 +282,10 @@ public class ColCircuitos {
 			e.printStackTrace();
 		}
 		
-		JOptionPane.showMessageDialog(null, "Cadastro/Atualização Concluída com SUCESSO! ");
+		JOptionPane.showMessageDialog(null, "Cadastro/AtualizaÃ§Ã£o ConcluÃ­da com SUCESSO! ");
 	}
 	
-	//Este método calcula o total do desconto somando os descontos de todos os circuitos. Em seguida seto o total e cada circuito.
+	//Este mï¿½todo calcula o total do desconto somando os descontos de todos os circuitos. Em seguida seto o total e cada circuito.
 	public void calcularESetarTotal() {
 		double total=0.0;
 		for(Circuito circuito: colCircuitos){

@@ -14,7 +14,7 @@ public class ColGlobal {
 		
 	}
 		
-	//Métodos
+	//Mï¿½todos
 	public ArrayList<Global> retornaLista(){
 		return colGlobal;
 	}
@@ -30,11 +30,11 @@ public class ColGlobal {
 		return colGlobal.size();
 	}
 	
-	public void começarDoZero() {
+	public void comeÃ§arDoZero() {
 		System.out.println("DISPONIBILIDADE GLOBAL");
-		System.out.println("Tamanho ANTES da execução do Protocolo: "+ colGlobal.size());
+		System.out.println("Tamanho ANTES da execuÃ§Ã£o do Protocolo: "+ colGlobal.size());
 		colGlobal.removeAll(colGlobal);
-		System.out.println("Tamanho APÓS execução do protocolo: " + colGlobal.size());
+		System.out.println("Tamanho APÃ“S execuÃ§Ã£o do protocolo: " + colGlobal.size());
 	}
 	
 	public void populaGlobal(ColTempoReparo reparos) {
@@ -62,7 +62,7 @@ public class ColGlobal {
 			//SETAR O DESCONTO
 			novoCircuitoGlobal.setValorDesconto(returnValorDesconto(novoCircuitoGlobal));
 			
-			//Adicionando o novo Registro Global do circuito a coleção
+			//Adicionando o novo Registro Global do circuito a coleï¿½ï¿½o
 			colGlobal.add(novoCircuitoGlobal);
 		}
 	}
@@ -82,7 +82,7 @@ public class ColGlobal {
 		double disponibidadeMesPercentual=global.getDisponibilidadePercentual();
 		String tecnologia=global.getTecnologia();
 		int porcentagemPagar=0;
-		//Se Não conter "SAT" na tecnologia então é terrestre
+		//Se Nï¿½o conter "SAT" na tecnologia entï¿½o ï¿½ terrestre
 		if (!(tecnologia.contains("SAT"))) {
 			//Disponibilidade Entre 99.5 e 100, retorna 100
 			if (disponibidadeMesPercentual >= 99.50)
@@ -96,7 +96,7 @@ public class ColGlobal {
 			//Disponibilidade abaixo de 95.9, retorna 90
 			else if ((disponibidadeMesPercentual <= 95.90))
 				porcentagemPagar=90;
-			//SE Conter "SAT" na tecnologia então é link SATÉLITE
+			//SE Conter "SAT" na tecnologia entï¿½o ï¿½ link SATï¿½LITE
 		} else {
 			//Disponibilidade Entre 97 e 100, retorna 100
 			if (disponibidadeMesPercentual >= 97.00)
@@ -111,7 +111,7 @@ public class ColGlobal {
 			else if ((disponibidadeMesPercentual < 93.00))
 				porcentagemPagar=90;
 		}
-	//Se retornar 0, então houve erro. Verifique a String tecnologia ou as condições nos IF's
+	//Se retornar 0, entï¿½o houve erro. Verifique a String tecnologia ou as condiï¿½ï¿½es nos IF's
 		return porcentagemPagar;
 	}
 	
@@ -119,7 +119,7 @@ public class ColGlobal {
 		int valorPercentualPagar=global.getValorPagarPercentual();
 		double valorLink=global.getValor();
 		
-		//Esse calculo retornará o desconto.
+		//Esse calculo retornarï¿½ o desconto.
 		return (valorLink-((valorLink*valorPercentualPagar)/100));
 	}
 }

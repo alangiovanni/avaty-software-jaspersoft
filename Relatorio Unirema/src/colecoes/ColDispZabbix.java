@@ -27,7 +27,7 @@ public class ColDispZabbix {
 	public ColDispZabbix(){
 		
 	}
-	//Métodos
+	//Mï¿½todos
 	public String getMesReferencia() {
 		return mesReferencia;
 	}
@@ -42,13 +42,13 @@ public class ColDispZabbix {
 	public void adicionaDisponibilidadeZabbix(DisponibilidadeZabbix novoDispZabbix){
 		colDispZabbix.add(novoDispZabbix);
 	}
-	public void começarDoZero() {
+	public void comeÃ§arDoZero() {
 		System.out.println("DISPONIBILIDADE DO ZABBIX");
-		System.out.println("Tamanho ANTES da execução do Protocolo: "+ colDispZabbix.size());
+		System.out.println("Tamanho ANTES da execuÃ§Ã£o do Protocolo: "+ colDispZabbix.size());
 		this.mesReferencia = "";
 		this.anoReferencia ="";
 		colDispZabbix.removeAll(colDispZabbix);
-		System.out.println("Tamanho APÓS execução do protocolo: " + colDispZabbix.size());
+		System.out.println("Tamanho APÃ“S execuÃ§Ã£o do protocolo: " + colDispZabbix.size());
 	}
 	
 	public int retornaTamanhoDaLista() {
@@ -56,7 +56,7 @@ public class ColDispZabbix {
 	}
 	
 	public void pegarDisponibilidadeDaPlanilha(File planilha, ColCircuitos circuitos) {
-		//Variavel para salvar as secretarias não encontradas na coleçao do software
+		//Variavel para salvar as secretarias nï¿½o encontradas na coleï¿½ao do software
 		StringBuilder circuitos_nao_encontrados = new StringBuilder();
 		
 		try {
@@ -79,7 +79,7 @@ public class ColDispZabbix {
 					//Recebe todas as celulas da linha
 					Iterator<Cell> cellIterator = row.iterator();
 					
-					//Inicializando as variáveis antes de realizar a busca na linha
+					//Inicializando as variï¿½veis antes de realizar a busca na linha
 					int contador = 0;
 					String nome_circuito = null;
 					String tipoIncidente = null;
@@ -93,20 +93,39 @@ public class ColDispZabbix {
 						
 						switch (contador) {
 						case 0:
-							nome_circuito = cell.getStringCellValue();
-							System.out.println(nome_circuito);
+							try {
+								nome_circuito = cell.getStringCellValue().trim();	
+							} catch (Exception e) {
+								JOptionPane.showMessageDialog(null, "Erro ao coletar o CIRCUITO. EstÃ¡ na Primeira coluna (A)? EstÃ¡ formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								e.printStackTrace();
+							}
 							break;
 							
 						case 1:
-							tipoIncidente = cell.getStringCellValue();
+							try {
+								tipoIncidente = cell.getStringCellValue();	
+							} catch (Exception e) {
+								JOptionPane.showMessageDialog(null, "Erro ao coletar o TIPO DE INCIDENTE. EstÃ¡ na Segunda coluna (B)? EstÃ¡ formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								e.printStackTrace();
+							}
 							break;
 						
 						case 2:
-							indisponibilidade = (double) cell.getNumericCellValue();
+							try {
+								indisponibilidade = (double) cell.getNumericCellValue();	
+							} catch (Exception e) {
+								JOptionPane.showMessageDialog(null, "Erro ao coletar a INDISPONIBILIDADE. EstÃ¡ na Terceira coluna (C)? EstÃ¡ formatado para NÃšMERO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								e.printStackTrace();
+							}
 							break;
 							
 						case 3:
-							disponibilidade = (double) cell.getNumericCellValue();
+							try {
+								disponibilidade = (double) cell.getNumericCellValue();
+							} catch (Exception e) {
+								JOptionPane.showMessageDialog(null, "Erro ao coletar a INDISPONIBILIDADE. EstÃ¡ na Quarta coluna (D)? EstÃ¡ formatado para NÃšMERO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								e.printStackTrace();
+							}
 							break;
 						}			
 						contador ++;
@@ -116,13 +135,13 @@ public class ColDispZabbix {
 					Circuito circuito = circuitos.retornaCircuito(nome_circuito);
 					
 					if(circuito == null) {
-						//Se Não encontrar o circuito da base do Zabbix na Base do software faça isso...
+						//Se Nï¿½o encontrar o circuito da base do Zabbix na Base do software faï¿½a isso...
 						if (circuitos_nao_encontrados.length() == 0)
 							circuitos_nao_encontrados.append(nome_circuito);
 						else 
 							circuitos_nao_encontrados.append("; " + nome_circuito);
 					} else {
-						//ADD A COLEÇÃO...
+						//ADD A COLEï¿½ï¿½O...
 						DisponibilidadeZabbix novoDispZabbix = new DisponibilidadeZabbix();
 						novoDispZabbix.setCircuito(nome_circuito);
 						novoDispZabbix.setGrupo(circuito.getGrupo());
@@ -147,8 +166,8 @@ public class ColDispZabbix {
 		}
 		else {
 			//Para mostrar no console
-			System.out.println("ERRO: Circuitos não encontrados na Base de Dados do SOFTWARE: " + circuitos_nao_encontrados);
-			JOptionPane.showMessageDialog(null, "Erro Exibido também no Console: Circuitos não encontrados na Base de Dados do SOFTWARE: " + circuitos_nao_encontrados);
+			System.out.println("ERRO: Circuitos nÃ£o encontrados na Base de Dados do SOFTWARE: " + circuitos_nao_encontrados);
+			JOptionPane.showMessageDialog(null, "Erro Exibido tambÃ©m no Console: Circuitos nÃ£o encontrados na Base de Dados do SOFTWARE: " + circuitos_nao_encontrados);
 		}
 	}
 	
@@ -161,7 +180,7 @@ public class ColDispZabbix {
 			totalIndisponibilidade = totalIndisponibilidade + circuito.getIndisponibilidade();
 		}
 		
-		//APÓS A SOMA TIRANDO A MÉDIA GERAL
+		//APï¿½S A SOMA TIRANDO A Mï¿½DIA GERAL
 		double mediaDisponibilidade =totalDisponibilidade/colDispZabbix.size();
 		double mediaIndisponibilidade =totalIndisponibilidade/colDispZabbix.size();
 		

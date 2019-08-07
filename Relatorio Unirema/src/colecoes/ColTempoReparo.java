@@ -38,7 +38,7 @@ public class ColTempoReparo {
 		
 	}
 	
-	//Métodos
+	//Mï¿½todos
 	public String getMesReferencia() {
 		return mesReferencia;
 	}
@@ -58,13 +58,13 @@ public class ColTempoReparo {
 		colTempoReparos.remove(novoTempoDeReparo);
 	}
 	
-	public void começarDoZero() {
+	public void comeÃ§arDoZero() {
 		System.out.println("TEMPO DE REPARO");
-		System.out.println("Tamanho ANTES da execução do Protocolo: "+ colTempoReparos.size());
+		System.out.println("Tamanho ANTES da execuÃ§Ã£o do Protocolo: "+ colTempoReparos.size());
 		colTempoReparos.removeAll(colTempoReparos);
 		this.mesReferencia = "";
 		this.anoReferencia ="";
-		System.out.println("Tamanho APÓS execução do protocolo: " + colTempoReparos.size());
+		System.out.println("Tamanho APÃ“S execuÃ§Ã£o do protocolo: " + colTempoReparos.size());
 	}
 	
 	public int retornaTamanhoDaLista() {
@@ -74,17 +74,17 @@ public class ColTempoReparo {
 	public int pegaReparoDaPlanilha(File planilha, ColCircuitos circuitos) {
 		int QtdeDiaMes;
 		int erro;
-		//Seta o mês e o ano na coleção para referencia do relatorio. Aqui o usuário seleciona o mês e o ano.
+		//Seta o mï¿½s e o ano na coleï¿½ï¿½o para referencia do relatorio. Aqui o usuï¿½rio seleciona o mï¿½s e o ano.
 		erro=pegaMesAnoReferencia();
 		
-		//Se erro igual a 1 o usuário cancelou.
+		//Se erro igual a 1 o usuï¿½rio cancelou.
 		if (erro == 1)
 			return 1;
 		
-		//Obtendo a quantidade de dias no mês
+		//Obtendo a quantidade de dias no mï¿½s
 		QtdeDiaMes=returnQtdeDiaMes();
 		
-		// Variavel para salvar os circuitos não encontrados na coleçao do software
+		// Variavel para salvar os circuitos nï¿½o encontrados na coleï¿½ao do software
 		String circuitos_nao_encontrados = null;
 
 		try {
@@ -107,7 +107,7 @@ public class ColTempoReparo {
 					// Recebe todas as celulas da linha
 					Iterator<Cell> cellIterator = row.iterator();
 
-					// Inicializando as variáveis antes de realizar a busca na linha
+					// Inicializando as variï¿½veis antes de realizar a busca na linha
 					int contador = 0;
 					String nome_circuito = null;
 					String protocolo = null;
@@ -121,12 +121,12 @@ public class ColTempoReparo {
 						Cell cell = cellIterator.next();
 						
 						switch (contador) {
-						//ESTOU IGNORANDO A PRIMERA COLUNA, QUE É A DO TICKET, Por enquanto.
+						//ESTOU IGNORANDO A PRIMERA COLUNA, QUE ï¿½ A DO TICKET, Por enquanto.
 						case 1:
 							try {
 								nome_circuito = cell.getStringCellValue().trim();	
 							} catch (Exception e) {
-								JOptionPane.showMessageDialog(null, "Erro ao coletar o CIRCUITO. Está na Segunda coluna (B)? Esta formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Erro ao coletar o CIRCUITO. EstÃ¡ na Segunda coluna (B)? EstÃ¡ formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
 								e.printStackTrace();
 								return 2;
 							}
@@ -136,7 +136,7 @@ public class ColTempoReparo {
 							try {
 								problema = cell.getStringCellValue().substring(8).trim();	
 							} catch (Exception e) {
-								JOptionPane.showMessageDialog(null, "Erro ao coletar o PROBLEMA. Está na Terceira coluna (C)? Esta formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Erro ao coletar o PROBLEMA. EstÃ¡ na Terceira coluna (C)? EstÃ¡ formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
 								e.printStackTrace();
 								return 2;
 							}
@@ -145,17 +145,17 @@ public class ColTempoReparo {
 							try {
 								expediente = cell.getStringCellValue().trim();
 							} catch (Exception e) {
-								JOptionPane.showMessageDialog(null, "Erro ao coletar o EXPEDIENTE. Está na Quarta coluna (D)? Esta formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Erro ao coletar o EXPEDIENTE. EstÃ¡ na Quarta coluna (D)? EstÃ¡ formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
 								e.printStackTrace();
 								return 2;
 							}
 							break;
 						case 4:
-							//Delta da Duração do Reparo já em MINUTOS.
+							//Delta da Duraï¿½ï¿½o do Reparo jï¿½ em MINUTOS.
 							try {
 								deltaDuracaoReparo = (int) cell.getNumericCellValue();	
 							} catch (Exception e) {
-								JOptionPane.showMessageDialog(null, "Erro ao coletar o DELTA. Está na Quinta coluna (E)? Esta formatado para NÚMERO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Erro ao coletar o DELTA. EstÃ¡ na Quinta coluna (E)? EstÃ¡ formatado para Nï¿½MERO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
 								e.printStackTrace();
 								return 2;
 							}
@@ -164,7 +164,7 @@ public class ColTempoReparo {
 							try {
 								protocolo = cell.getStringCellValue().trim();
 							} catch (Exception e) {
-								JOptionPane.showMessageDialog(null, "Erro ao coletar o PROTOCOLO. Está na Sexta coluna (F)? Esta formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								JOptionPane.showMessageDialog(null, "Erro ao coletar o PROTOCOLO. EstÃ¡ na Sexta coluna (F)? EstÃ¡ formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
 								e.printStackTrace();
 								return 2;
 							}
@@ -173,9 +173,9 @@ public class ColTempoReparo {
 						contador++;
 					}
 					
-					// Faz uma varredura e verifica se já encontra-se cadastrado o circuito
+					// Faz uma varredura e verifica se jï¿½ encontra-se cadastrado o circuito
 					// Se sim, atualiza
-					// Se não encontrar, notifica para o usuario
+					// Se nï¿½o encontrar, notifica para o usuario
 					boolean circuito_encontrado = false;
 					boolean circuito_encontrado_reparo = false;
 					
@@ -184,7 +184,7 @@ public class ColTempoReparo {
 							// Informo aqui que encontrei o circuito na planilha.
 							circuito_encontrado = true;
 							
-							// Se for da SEFAZ, não faça nada, pule para próxima linha
+							// Se for da SEFAZ, nï¿½o faï¿½a nada, pule para prï¿½xima linha
 							if (circuito.getGrupo().equalsIgnoreCase("SEFAZ"))
 								break;
 							
@@ -192,7 +192,7 @@ public class ColTempoReparo {
 							for	(TempoDeReparo reparo: colTempoReparos) {
 								if (reparo.getCircuito().equalsIgnoreCase(nome_circuito)) { //SE TIVER MAIS DE UM REPARO...
 									circuito_encontrado_reparo=true;
-									//Somo as durações dos REPAROs para o mesmo circuito
+									//Somo as duraï¿½ï¿½es dos REPAROs para o mesmo circuito
 									int novaDuracaoReparo = reparo.getDuracaoReparo() + formTemRepMin(reparo, deltaDuracaoReparo);
 									reparo.setDuracaoReparo(novaDuracaoReparo);
 									
@@ -201,14 +201,14 @@ public class ColTempoReparo {
 									
 									//Concatena procotolos
 									reparo.concatProtocolo(protocolo);
-									//reparo.concat_tkt_prot_problem(ticket, protocolo, problema); // Não existe ainda
+									//reparo.concat_tkt_prot_problem(ticket, protocolo, problema); // Nï¿½o existe ainda
 									
 									// CALCULO DO DESCONTO
 									calcularDesconto(reparo);
 								}
 							}
 							
-							//Só entrará aqui se o for um novo reparo
+							//Sï¿½ entrarï¿½ aqui se o for um novo reparo
 							if (!circuito_encontrado_reparo) {
 								//Abrindo o reparo
 								TempoDeReparo novoReparo = new TempoDeReparo();
@@ -229,7 +229,7 @@ public class ColTempoReparo {
 								//Primeiro reparo
 								novoReparo.setQtdeReparos(1);
 
-								// SETANDO O SLA DOS CIRCUITOS COM BASE EM SUA LOCALIZAÇÃO E TECNOLOGIA
+								// SETANDO O SLA DOS CIRCUITOS COM BASE EM SUA LOCALIZAï¿½ï¿½O E TECNOLOGIA
 								/* if (circuito.getTecnologia().contains("SAT")) {
 									if (circuito.getLocalizacao().equalsIgnoreCase("capital")) {
 										novoReparo.setSlaHora(8);
@@ -249,7 +249,7 @@ public class ColTempoReparo {
 									}
 								//}
 								
-								// Setando o total de minutos do Mês e a duração do reparo, necessário ser nesta ordem
+								// Setando o total de minutos do Mï¿½s e a duraï¿½ï¿½o do reparo, necessï¿½rio ser nesta ordem
 								novoReparo.setTotalMinDoMes(QtdeDiaMes*24*60);
 								novoReparo.setDuracaoReparo(formTemRepMin(novoReparo, deltaDuracaoReparo));
 								// CALCULO DO DESCONTO
@@ -259,7 +259,7 @@ public class ColTempoReparo {
 							}
 						}
 					}
-					// Circuitos não encontrados na coleção
+					// Circuitos nï¿½o encontrados na coleï¿½ï¿½o
 					if (circuito_encontrado == false) {
 						if (circuitos_nao_encontrados == null) {
 							circuitos_nao_encontrados = nome_circuito;
@@ -280,7 +280,7 @@ public class ColTempoReparo {
 			JOptionPane.showMessageDialog(null, "Todos os circuitos foram localizados.");
 		} else {
 			JOptionPane.showMessageDialog(null,
-					"ERRO: Circuitos não encontrados na Base de Dados: " + circuitos_nao_encontrados);
+					"ERRO: Circuitos nï¿½o encontrados na Base de Dados: " + circuitos_nao_encontrados);
 		}
 		
 		return 0;
@@ -296,24 +296,24 @@ public class ColTempoReparo {
 			circuito.setTotalDescontoReparo(total);
 		}
 	}
-	//NÃO UTILIZADO MAIS
-	//AQUI RECEBO A DATA NO SEGUINTE PADRÃO: 00 Dias; hh:mm:ss
-	//Essa é a duração do reparo
+	//Nï¿½O UTILIZADO MAIS
+	//AQUI RECEBO A DATA NO SEGUINTE PADRï¿½O: 00 Dias; hh:mm:ss
+	//Essa ï¿½ a duraï¿½ï¿½o do reparo
 	@SuppressWarnings("unused")
 	private String somarHoras(String horaReparoAtual, String horaReparoContabilizar){
-		//Pegando os dias das durações de reparos
+		//Pegando os dias das duraï¿½ï¿½es de reparos
 		int diaAntes = Integer.parseInt(horaReparoAtual.substring(0, 2));
 		int diaNovo = Integer.parseInt(horaReparoContabilizar.substring(0, 2));
 		
-		//Pegando as Horas das durações de reparos
+		//Pegando as Horas das duraï¿½ï¿½es de reparos
 		int horaAntes = Integer.parseInt(horaReparoAtual.substring(9, 11));
 		int horaNova = Integer.parseInt(horaReparoContabilizar.substring(9, 11));
 		
-		//Pegando os minutos das durações de reparo
+		//Pegando os minutos das duraï¿½ï¿½es de reparo
 		int minutoAntes = Integer.parseInt(horaReparoAtual.substring(12, 14));
 		int minutoNovo = Integer.parseInt(horaReparoContabilizar.substring(12, 14));
 		
-		//Pegando os segundos das durações de reparo
+		//Pegando os segundos das duraï¿½ï¿½es de reparo
 		int segundoAntes = Integer.parseInt(horaReparoAtual.substring(15, 17));
 		int segundoNovo = Integer.parseInt(horaReparoContabilizar.substring(15, 17));
 
@@ -333,7 +333,7 @@ public class ColTempoReparo {
 			horaContabilizada++;
 		}
 		
-		//AQUI CONVERTO O INT PARA STRING USANDO O CONSTRUTOR DE STRING E COLOCANDO UM 0 ONDE OS NÚMEROS FOR MENOR QUE 10 PARA QUE FIQUE NO SEGUINTE PADRÃO: hh:mm:ss
+		//AQUI CONVERTO O INT PARA STRING USANDO O CONSTRUTOR DE STRING E COLOCANDO UM 0 ONDE OS Nï¿½MEROS FOR MENOR QUE 10 PARA QUE FIQUE NO SEGUINTE PADRï¿½O: hh:mm:ss
 		StringBuilder stringBuilder = new StringBuilder();
 		
 		if (diaContabilizado < 10)
@@ -410,7 +410,7 @@ public class ColTempoReparo {
 	/*
 	 * API JODA TIME
 	 */
-	//NÃO UTILIZADO MAIS - DEIXADO COMO APRENDIZADO.
+	//Nï¿½O UTILIZADO MAIS - DEIXADO COMO APRENDIZADO.
 	public String retornaDuracaoReparo(String dataInicioReparo, String dataFimReparo) {
 		//String dataInicioReparo = "2019-06-04 12:05:00";
 		//String dataFimReparo = "2019-06-08 16:15:10";
@@ -437,7 +437,7 @@ public class ColTempoReparo {
 			int segundoInt=Seconds.secondsBetween(dt1, dt2).getSeconds() % 60;
 			
 	
-			//OS PRÓXIMOS IF'S É PARA COLOCAR O HORÁRIO NO PADRÃO: hh:mm:ss
+			//OS PRï¿½XIMOS IF'S ï¿½ PARA COLOCAR O HORï¿½RIO NO PADRï¿½O: hh:mm:ss
 			if (diaInt < 10)
 				stringDuracaoReparo.append("0"+diaInt+" Dias. ");
 			else
@@ -463,11 +463,11 @@ public class ColTempoReparo {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//ERRO SE RETORNAR NULL, NÃO ENTROU NO TRY
+		//ERRO SE RETORNAR NULL, Nï¿½O ENTROU NO TRY
 		return null;	
 	}
 	
-	// FORMULA PARA CALCULAR A DURAÇÃO DO REPARO LEVANDO EM CONSIDERAÇÃO O SLA E O DELTA COLETADO NA PLANILHA.
+	// FORMULA PARA CALCULAR A DURAï¿½ï¿½O DO REPARO LEVANDO EM CONSIDERAï¿½ï¿½O O SLA E O DELTA COLETADO NA PLANILHA.
 	private int formTemRepMin(TempoDeReparo reparo, int delta) {
 		return reparo.getSlaMin()+((-1)*delta);
 	}
@@ -480,12 +480,12 @@ public class ColTempoReparo {
 		try {
 			calendario.set(Calendar.MONTH, converteMesEmInt(this.mesReferencia));
 		} catch (Exception e) {
-		    JOptionPane.showMessageDialog(null, "Erro ao setar o Mês em ColTempoReparo, Função: returnQtdeDiaMes", "Set Mês ColTempoReparo", JOptionPane.INFORMATION_MESSAGE);
+		    JOptionPane.showMessageDialog(null, "Erro ao setar o MÃªs em ColTempoReparo, FunÃ§Ã£o: returnQtdeDiaMes", "Set MÃªs ColTempoReparo", JOptionPane.INFORMATION_MESSAGE);
 		    e.printStackTrace(); //Printa o erro.
 		    return 1;
 		}
 		
-		// Retorna a quantidade de dias no mês informado
+		// Retorna a quantidade de dias no mï¿½s informado
 		return calendario.getActualMaximum(Calendar.DAY_OF_MONTH);
 	}
 	
@@ -495,7 +495,7 @@ public class ColTempoReparo {
 			return 0;
 		case "FEVEREIRO":
 			return 1;
-		case "MARÇO":
+		case "MARï¿½O":
 			return 2;
 		case "ABRIL":
 			return 3;
@@ -517,7 +517,7 @@ public class ColTempoReparo {
 			return 11;
 		}
 		
-		//O retorno 12 significa que o mês não é nenhuma das strings testadas acima. É um erro.
+		//O retorno 12 significa que o mï¿½s nï¿½o ï¿½ nenhuma das strings testadas acima. ï¿½ um erro.
 		return 12;
 	}
 	
@@ -535,7 +535,7 @@ public class ColTempoReparo {
 				this.anoReferencia=obj.getAnoSelecionado();
 			}
 		}
-		//Se o usuário não cancelar retornará 0
+		//Se o usuï¿½rio nï¿½o cancelar retornarï¿½ 0
 		return 0;
 	}
 	

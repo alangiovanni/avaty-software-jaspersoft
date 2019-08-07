@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Avaty_DisponibilidadeLink" pageWidth="1120" pageHeight="700" orientation="Landscape" columnWidth="1080" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a5c9b49-9dc5-422a-ac69-e92cf61ef530">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="RetornaListaDisponibilidade"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -84,7 +84,7 @@
 				<reportElement x="2" y="0" width="1077" height="500" uuid="8b4abae8-8d7c-4be7-ab64-408df39d25cf"/>
 				<image>
 					<reportElement x="0" y="0" width="1077" height="500" uuid="9f629bb4-ce1a-4b53-aa10-a23569a56d35"/>
-					<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/back_Avaty-SemSlogan.png"]]></imageExpression>
+					<imageExpression><![CDATA["resources/imagens/back_Avaty-SemSlogan.png"]]></imageExpression>
 				</image>
 			</frame>
 		</band>
@@ -271,7 +271,7 @@
 			</staticText>
 			<image>
 				<reportElement x="997" y="0" width="57" height="60" uuid="a5b55412-c2eb-4fe5-a31a-fafb8d669ee4"/>
-				<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/Disponibilidade/Slogan_Avaty_Marca.png"]]></imageExpression>
+				<imageExpression><![CDATA["resources/imagens/Disponibilidade/Slogan_Avaty_Marca.png"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement mode="Opaque" x="80" y="120" width="70" height="30" forecolor="#FFFFFF" backcolor="#F24F4F" uuid="1bbaf50b-2d51-4fc5-affe-a014933891b7"/>
@@ -588,7 +588,7 @@
 			</frame>
 			<image>
 				<reportElement x="330" y="10" width="420" height="85" uuid="4aadbfb5-ca7d-41c5-ae2f-f41f92df852e"/>
-				<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/Disponibilidade/ISO_Cor_Forte.png"]]></imageExpression>
+				<imageExpression><![CDATA["resources/imagens/Disponibilidade/ISO_Cor_Forte.png"]]></imageExpression>
 			</image>
 		</band>
 	</pageFooter>
@@ -818,11 +818,11 @@
 			</frame>
 			<image>
 				<reportElement x="997" y="0" width="57" height="54" uuid="0142722a-477a-4e5a-b2d7-72c0b3d6ff46"/>
-				<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/Disponibilidade/Slogan_Avaty_Marca.png"]]></imageExpression>
+				<imageExpression><![CDATA["resources/imagens/Disponibilidade/Slogan_Avaty_Marca.png"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="330" y="435" width="420" height="85" uuid="7ce3500d-61a6-47cd-a58f-45602cac4a4a"/>
-				<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/Disponibilidade/ISO_Cor_Forte.png"]]></imageExpression>
+				<imageExpression><![CDATA["resources/imagens/Disponibilidade/ISO_Cor_Forte.png"]]></imageExpression>
 			</image>
 			<frame>
 				<reportElement mode="Opaque" x="0" y="54" width="1077" height="59" forecolor="#000000" backcolor="#F24F4F" uuid="3feadb67-5d90-461d-8355-c64e9026d1b1"/>

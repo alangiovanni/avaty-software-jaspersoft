@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Avaty_ZabbixDisponibilidade" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="562f4c1d-b86f-4dd9-86ab-43852e20d2fe">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src\dataAdapter\RetornaListaZabbix.xml"/>
 	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
@@ -40,7 +40,7 @@
 		<band height="752" splitType="Stretch">
 			<image>
 				<reportElement x="2" y="10" width="567" height="742" uuid="e5e9edfb-505a-4d0c-836b-46036e8973af"/>
-				<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/Background A4/Background_Avaty.png"]]></imageExpression>
+				<imageExpression><![CDATA["resources/imagens/Background A4/Background_Avaty.png"]]></imageExpression>
 			</image>
 		</band>
 	</background>
@@ -61,7 +61,7 @@
 			</frame>
 			<image>
 				<reportElement x="492" y="0" width="69" height="61" uuid="de4041fd-2b53-43f9-8787-73f8adf208e8"/>
-				<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/Slogan_Avaty_Marca.png"]]></imageExpression>
+				<imageExpression><![CDATA["resources/imagens/Slogan_Avaty_Marca.png"]]></imageExpression>
 			</image>
 			<frame>
 				<reportElement mode="Opaque" x="2" y="121" width="568" height="20" forecolor="#000000" backcolor="#F24F4F" uuid="4ace5459-5c2f-47b1-9321-d91c3e4c2cf6"/>
@@ -277,7 +277,7 @@
 			</frame>
 			<image>
 				<reportElement x="156" y="3" width="280" height="65" uuid="5ee5c852-1243-4133-8a5d-971b6150e58b"/>
-				<imageExpression><![CDATA["C:/Users/Tarde_1/eclipse-workspace/Relatorio Unirema/resources/imagens/Background A4/ISO_Cor_Forte.png"]]></imageExpression>
+				<imageExpression><![CDATA["resources/imagens/Background A4/ISO_Cor_Forte.png"]]></imageExpression>
 			</image>
 		</band>
 	</pageFooter>
