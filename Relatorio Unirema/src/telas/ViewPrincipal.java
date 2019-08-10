@@ -106,7 +106,7 @@ public class ViewPrincipal extends JFrame {
 					if (reparos.retornaTamanhoDaLista() > 0) {
 						//S� acrescenta na disponibilidade global se a lista estiver vazia. Se n�o apenas executa o relat�rio.
 						if (disponibilidadeGlobal.retornaTamanhoDaLista() == 0) {
-				            //Popula a cole��o de disponibilidadeGlobal com os reparos
+				            //Popula a COLEÇÃO de disponibilidadeGlobal com os reparos
 				            disponibilidadeGlobal.populaGlobal(reparos);
 				            //Calculo e seto o total do desconto
 				            disponibilidadeGlobal.calcularESetarTotalDesconto();
@@ -132,17 +132,17 @@ public class ViewPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				//SE BASE DE DADOS FOR MAIOR QUE 0...
 				if (circuitos.retornaTamanhoLista() > 0) {
-					//SE COLE��O DE LAT�NCIAS ESTIVER EM BRANCO...
+					//SE COLEÇÃO DE LATÊNCIAS ESTIVER EM BRANCO...
 					if (latencias.retornaTamanhoDaLista() == 0) {
 		                File planilha = pegaPlanilha();
 		                if (planilha != null) {
-			                //Recebe informa��es da planilha de disponibilidade
+			                //Recebe informações da planilha de disponibilidade
 			                latencias.pegaDisponibilidadeDaPlanilha(planilha, circuitos);
 			                //Calculo e seto o total � pagar
 			                latencias.setarTotalValorPagar();
 		                }
 					}
-					//SE COLE��O DE LAT�NCIAS FOR MAIOR QUE 0, GERA O RELAT�RIO
+					//SE COLEÇÃO DE LATÊNCIAS FOR MAIOR QUE 0, GERA O RELAT�RIO
 					if (latencias.retornaTamanhoDaLista() > 0)
 						geraRelatorioLatencia(latencias);
 						
@@ -162,20 +162,20 @@ public class ViewPrincipal extends JFrame {
 					if (reparos.retornaTamanhoDaLista() == 0) {
 		                File planilha = pegaPlanilha();
 		                if (planilha != null) {
-			                //Recebe informa��es da planilha de reparos
+			                //Recebe informações da planilha de reparos
 			                erro=reparos.pegaReparoDaPlanilha(planilha, circuitos);
 			                
 			                if (erro == 0)
 			                //Calculo e seto o total do desconto
 			                reparos.calcularESetarTotalReparo();
-			                //erro == 1 significa que o usu�rio cancelou a ViewMesReferencia;
+			                //erro == 1 significa que o usuário cancelou a ViewMesReferencia;
 			                else if (erro == 2) {
 			                	JOptionPane.showMessageDialog(null, "Erro(s) encontrado(s) na Planilha. Operação Cancelada.", "ERRO", JOptionPane.ERROR_MESSAGE);
 			                	return;
 			                }
 		                }
 	                }
-					//SE COLE��O DE REPAROS FOR MAIOR QUE 0, GERA O RELAT�RIO
+					//SE COLEÇÃO DE REPAROS FOR MAIOR QUE 0, GERA O RELAT�RIO
 					if (reparos.retornaTamanhoDaLista() > 0)
 		                geraRelatorioReparo(reparos);
 				} else 
@@ -188,18 +188,18 @@ public class ViewPrincipal extends JFrame {
 		mntmDisponibilidadeZabbix.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (circuitos.retornaTamanhoLista() > 0) {
-					//SE COLE��O DE LAT�NCIAS ESTIVER EM BRANCO...
+					//SE COLEÇÃO DE LATÊNCIAS ESTIVER EM BRANCO...
 					if (disponibilidadeZabbix.retornaTamanhoDaLista() == 0) {
 			                File planilha = pegaPlanilha();
 			                if (planilha != null) {
-				                //Recebe informa��es da planilha do Zabbix
+				                //Recebe informações da planilha do Zabbix
 				                disponibilidadeZabbix.pegarDisponibilidadeDaPlanilha(planilha, circuitos);
 				                //Soma o total de indisponibilidade e Disponibilidade
 				                disponibilidadeZabbix.calculaMedia();
 			                }
 					}
 					
-					//SE COLE��O DE LAT�NCIAS FOR MAIOR QUE 0
+					//SE COLEÇÃO DE LATÊNCIAS FOR MAIOR QUE 0
 					if (disponibilidadeZabbix.retornaTamanhoDaLista() > 0)
 						geraRelatorioZabbix(disponibilidadeZabbix);
 				}
@@ -224,7 +224,7 @@ public class ViewPrincipal extends JFrame {
 	                //TENTANDO LER DA PLANILHA
 					circuitos.pegarLatenciaDaPlanilha(arquivo);
 					
-					//Lista Tempor�ria com as maiores latencias
+					//Lista Temporária com as maiores latencias
 					ColCircuitos listaTemporaria = new ColCircuitos();
 					listaTemporaria = circuitos.retornaListaComLatenciaAlta();
 					//Neste metodo, calculo o total e seto em cada circuito o total calculado. Gambiarra necess�ria para n�o dar ruim no Jaspersoft
@@ -240,6 +240,14 @@ public class ViewPrincipal extends JFrame {
 				}
 			}
 		});
+		
+		JMenuItem mntmChamadosReincidentes = new JMenuItem("Chamados Reincidentes");
+		mntmChamadosReincidentes.setEnabled(false);
+		mnRelatorios.add(mntmChamadosReincidentes);
+		
+		JMenuItem mntmIncidentesSemGlosa = new JMenuItem("Incidentes Sem Glosa");
+		mntmIncidentesSemGlosa.setEnabled(false);
+		mnRelatorios.add(mntmIncidentesSemGlosa);
 		mnRelatorios.add(mntmLatencia);
 		
 		JMenu mnProtocolosStark = new JMenu("Protocolos Stark");
@@ -253,7 +261,7 @@ public class ViewPrincipal extends JFrame {
 				int resposta;
 				resposta = JOptionPane.showConfirmDialog(null, "Jarvis: Começar do Zero, Senhor?");
 				if (resposta == JOptionPane.YES_OPTION) {
-					// verifica se o usu�rio clicou no bot�o YES
+					// verifica se o usuário clicou no botão YES
 					
 					//Iniciando os protocolos
 					System.out.println("");
