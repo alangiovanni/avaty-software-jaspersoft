@@ -45,7 +45,7 @@ public class ColCircuitos {
 		return colCircuitos.size();
 	}
 	
-	//N�O USADO
+	//NãO USADO
 	public void começarDoZero() {
 		System.out.println("LATÊNCIA");
 		System.out.println("Tamanho ANTES da execução do Protocolo: "+ colCircuitos.size());
@@ -61,7 +61,8 @@ public class ColCircuitos {
 		}
 		return null;
 	}
-	
+	/*
+	 * Não USADO MAIS - Aprendizado
 	public void pegarLatenciaDaPlanilha(File planilha) {
 		//Variavel para salvar os circuitos n�o encontrados na cole�ao do software
 		String circuitos_nao_encontrados = null;
@@ -152,10 +153,11 @@ public class ColCircuitos {
 		}
 			
 	}
-	
+	*/
 	public void lerDaPlanilha(File planilha) {
 		try {
 			FileInputStream entradaPlanilha = new FileInputStream(planilha);
+			
 			try {
 				//Cria um WorkBook com todas as abas
 				XSSFWorkbook workbook = new XSSFWorkbook(entradaPlanilha);
@@ -246,26 +248,36 @@ public class ColCircuitos {
 								return;
 							}
 							break;
+							
+						case 7:
+							try {
+								novoCircuito.setSecretaria(cell.getStringCellValue());
+							} catch (Exception e) {
+								JOptionPane.showMessageDialog(null, "Erro ao coletar a SECRETARIA. Está na Oitava coluna (H)? Esta formatado para TEXTO?", "ERRO NO TIPO DE DADOS", JOptionPane.ERROR_MESSAGE);
+								e.printStackTrace();
+								return;
+							}
+							break;
 						}			
 						contador ++;
 					}
 					
 					//Faz uma varredura e verifica se j� encontra-se cadastrado o circuito
 					//Se sim, atualiza
-					//Se n�o encontrar, adiciona novo.
+					//Se não encontrar, adiciona novo.
 					boolean circuito_encontrado=false;
 					for(Circuito circuito: colCircuitos){
 						if(circuito.getCircuito().equals(novoCircuito.getCircuito())) {
-							//Circuito j� existe na cole��o, atualizando-o.
+							//Circuito já existe na coleção, atualizando-o.
+							circuito_encontrado=true;
+							
 							circuito.setLocalizacao(novoCircuito.getLocalizacao());
 							circuito.setBandaContratada(novoCircuito.getBandaContratada());
 							circuito.setGrupo(novoCircuito.getGrupo());
 							circuito.setLocal(novoCircuito.getLocal());
 							circuito.setTecnologia(novoCircuito.getTecnologia());
 							circuito.setValor(novoCircuito.getValor());
-							
-							//Informo aqui que encontrei o circuito na planilha.
-							circuito_encontrado=true;
+							circuito.setSecretaria(novoCircuito.getSecretaria());
 						}
 					}
 					if(circuito_encontrado == false) {
@@ -275,17 +287,20 @@ public class ColCircuitos {
 				
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
+				JOptionPane.showMessageDialog(null, "Erro ao ler o arquivo.", "Erro de Leitura/Escrita", JOptionPane.ERROR_MESSAGE);
 				e.printStackTrace();
 			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(null, "Erro ao abrir o arquivo. Arquivo não encontrado.", "Arquivo Não Encontrado", JOptionPane.ERROR_MESSAGE);
 			e.printStackTrace();
 		}
-		
 		JOptionPane.showMessageDialog(null, "Cadastro/Atualização Concluída com SUCESSO! ");
 	}
 	
 	//Este m�todo calcula o total do desconto somando os descontos de todos os circuitos. Em seguida seto o total e cada circuito.
+	/*
+	 * Não Usado Mais
 	public void calcularESetarTotal() {
 		double total=0.0;
 		for(Circuito circuito: colCircuitos){
@@ -296,7 +311,9 @@ public class ColCircuitos {
 			circuito.setTotal(total);
 		}
 	}
-	
+	*/
+	/*
+	 * NÃO USADO MAIS - APRENDIZADO
 	public ColCircuitos retornaListaComLatenciaAlta(){
 		ColCircuitos circuitosComLatenciaAlta = new ColCircuitos();
 		for(Circuito circuito: colCircuitos){
@@ -306,7 +323,7 @@ public class ColCircuitos {
 		}
 		return circuitosComLatenciaAlta;
 	}
-
+	 */
 	@Override
 	public String toString() {
 		return "ColCircuitos [colCircuitos=" + colCircuitos + "]";

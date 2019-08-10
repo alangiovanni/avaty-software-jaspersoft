@@ -47,6 +47,7 @@ public class ViewPrincipal extends JFrame {
 					ViewPrincipal frame = new ViewPrincipal();
 					frame.setVisible(true);
 				} catch (Exception e) {
+					JOptionPane.showMessageDialog(null, "Erro ao Iniciar a Aplicação. Contate o Desenvolvedor.", "ERRO JAVA", JOptionPane.ERROR_MESSAGE);
 					e.printStackTrace();
 				}
 			}
@@ -61,7 +62,7 @@ public class ViewPrincipal extends JFrame {
 		setResizable(false);
 		setTitle("AVATY - SOFTWARE");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 763, 467);
+		setBounds(100, 100, 815, 495);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -74,7 +75,7 @@ public class ViewPrincipal extends JFrame {
 		ColTempoReparo reparos = new ColTempoReparo();
 		
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 747, 33);
+		menuBar.setBounds(0, 0, 809, 33);
 		contentPane.add(menuBar);
 		
 		JMenu mnCadastrar = new JMenu("  Cadastrar ");
@@ -87,8 +88,8 @@ public class ViewPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				File arquivo = pegaPlanilha();
 		        //TENTANDO LER DA PLANILHA BASE
-				if (arquivo != null)
-		        circuitos.lerDaPlanilha(arquivo);
+				if (arquivo != null) 
+			        circuitos.lerDaPlanilha(arquivo);
 			}
 		});
 		mntmAtualizarCircuitosVia.setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -145,7 +146,6 @@ public class ViewPrincipal extends JFrame {
 					//SE COLEÇÃO DE LATÊNCIAS FOR MAIOR QUE 0, GERA O RELAT�RIO
 					if (latencias.retornaTamanhoDaLista() > 0)
 						geraRelatorioLatencia(latencias);
-						
 			} else
 				msgJarvisBaseDeDados();
 			}
@@ -214,19 +214,20 @@ public class ViewPrincipal extends JFrame {
 		mntmDispGlo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F5, 0));
 		mnRelatorios.add(mntmDispGlo);
 		
-		JMenuItem mntmLatencia = new JMenuItem("Latencia  ");
+		JMenuItem mntmLatencia = new JMenuItem("Latencia - [Removed]");
 		mntmLatencia.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 		mntmLatencia.setEnabled(false);
+		/*
 		mntmLatencia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
                 File arquivo = pegaPlanilha();
                 if (arquivo != null) {
 	                //TENTANDO LER DA PLANILHA
-					circuitos.pegarLatenciaDaPlanilha(arquivo);
+					//circuitos.pegarLatenciaDaPlanilha(arquivo);
 					
 					//Lista Temporária com as maiores latencias
 					ColCircuitos listaTemporaria = new ColCircuitos();
-					listaTemporaria = circuitos.retornaListaComLatenciaAlta();
+					//listaTemporaria = circuitos.retornaListaComLatenciaAlta();
 					//Neste metodo, calculo o total e seto em cada circuito o total calculado. Gambiarra necess�ria para n�o dar ruim no Jaspersoft
 					listaTemporaria.calcularESetarTotal();
 					
@@ -238,9 +239,9 @@ public class ViewPrincipal extends JFrame {
 						e1.printStackTrace();
 					}
 				}
-			}
+			} 
 		});
-		
+		*/
 		JMenuItem mntmChamadosReincidentes = new JMenuItem("Chamados Reincidentes");
 		mntmChamadosReincidentes.setEnabled(false);
 		mnRelatorios.add(mntmChamadosReincidentes);
@@ -269,7 +270,7 @@ public class ViewPrincipal extends JFrame {
 					latencias.começarDoZero();
 					disponibilidadeGlobal.começarDoZero();
 					disponibilidadeZabbix.começarDoZero();
-					//Conclus�o
+					//Conclusão
 					
 					JOptionPane.showMessageDialog(null, "Jarvis: Protocolo Começar do Zero Conclu�do! Todas as Cole��es, com exce��o da base de dados, foram reiniciadas.");
 				} else {
@@ -280,13 +281,13 @@ public class ViewPrincipal extends JFrame {
 		mnProtocolosStark.add(mntmComearDoZero);
 		
 		JLabel lblEmDesenvolvimentoPor = new JLabel("Em desenvolvimento por: Alan Giovanni | alan.giovanni@avaty.com.br");
-		lblEmDesenvolvimentoPor.setBounds(21, 400, 714, 27);
+		lblEmDesenvolvimentoPor.setBounds(10, 428, 714, 27);
 		contentPane.add(lblEmDesenvolvimentoPor);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setIcon(new ImageIcon("resources\\imagens\\avaty.png"));
-		lblNewLabel_1.setBounds(165, 96, 441, 213);
+		lblNewLabel_1.setBounds(198, 105, 441, 213);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel = new JLabel("");
@@ -294,7 +295,7 @@ public class ViewPrincipal extends JFrame {
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon("resources\\imagens\\Fundo_Branco.png"));
-		lblNewLabel.setBounds(10, 32, 737, 395);
+		lblNewLabel.setBounds(0, 32, 809, 434);
 		contentPane.add(lblNewLabel);
 	}
 	private void msgJarvisBaseDeDados() {
@@ -331,12 +332,12 @@ public class ViewPrincipal extends JFrame {
 	}
 	
 	private void geraRelatorioLatencia(ColDisponibilidade latencias) {
-		//Sobe o JDIALOG se M�s e Ano n�o tiver sido informado.
+		//Sobe o JDIALOG se Mês e Ano não tiver sido informado.
 		if (latencias.getMesReferencia().isEmpty() || latencias.getAnoReferencia().isEmpty()) {
             ViewMesReferencia obj = new ViewMesReferencia();
             obj.setVisible(true);
-			//obj.setLocationRelativeTo(null);
-		
+			obj.setLocationRelativeTo(null);
+			
 			if (obj.getMesSelecionado() != null && obj.getAnoSelecionado() != null){
 				//Setando M�s e Ano no relat�rio;
 				latencias.setMesEAnoRelatorio(obj.getMesSelecionado(), obj.getAnoSelecionado());

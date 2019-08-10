@@ -7,13 +7,13 @@ public class Circuito {
 	private String tecnologia;
 	private String grupo;
 	private String local;
+	private String secretaria;
 	private String bandaContratada;
-	private int latencia;
 	private double valor;
 	private double desconto;
 	private double total;
 	
-	//Métodos - Getters and Setters
+	//Mï¿½todos - Getters and Setters
 	public String getCircuito() {
 		return circuito;
 	}
@@ -44,17 +44,17 @@ public class Circuito {
 	public void setLocal(String local) {
 		this.local = local;
 	}
+	public String getSecretaria() {
+		return secretaria;
+	}
+	public void setSecretaria(String secretaria) {
+		this.secretaria = secretaria;
+	}
 	public String getBandaContratada() {
 		return bandaContratada;
 	}
 	public void setBandaContratada(String bandaContratada) {
 		this.bandaContratada = bandaContratada;
-	}
-	public int getLatencia() {
-		return latencia;
-	}
-	public void setLatencia(int latencia) {
-		this.latencia = latencia;
 	}
 	public double getValor() {
 		return valor;
